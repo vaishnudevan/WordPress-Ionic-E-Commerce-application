@@ -1,0 +1,28 @@
+<ion-view view-title="Orders">
+    <ion-header-bar>
+        <h1 class="title">Your Cart</h1>
+    </ion-header-bar>
+    <ion-content>
+        
+    <ion-list >
+             
+        <ion-item class="item item-thumbnail-left"  ng-if="orders.length==0">
+                <img ng-src="{{'http://lorempixel.com/100/100/'}}" on-error-src="{{'https://placeimg.com/64/64/'}}" />
+                <!-- <h2><strong>{{msg}}</strong></h2> -->
+                <p>There are no orders from you.</p>
+        </ion-item>
+     
+            <ion-item ng-if="orders.length!==0" class="item-avatar-left" ng-repeat="product in orders">
+                <img ng-src="{{'http://lorempixel.com/64/64/'}}" on-error-src="{{'https://placeimg.com/64/64/'}}" />
+                <h2>Order id: {{product.id}}</h2>
+                <p>Status: {{product.status}}</p>
+                <p>Payment Type: {{product.payment_details.method_title}}</p>
+                <button class="button icon-left button-outline button-assertive ion-trash-a" ng-click="del(product)" >Cancel Order</button>
+                <span class="badge badge-assertive">{{product.total}} €</span>
+
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>

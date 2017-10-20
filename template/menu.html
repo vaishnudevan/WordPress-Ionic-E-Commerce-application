@@ -1,0 +1,38 @@
+<ion-side-menus >
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-assertive button-icon-left button-clear" ng-click="showCart()">
+                    <i class="icon ion-android-cart"></i>{{cartCount}}
+                </button>
+            </ion-nav-buttons>
+                
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu>
+            <img src="img/ecommerce-1.jpg" style="width:100%; height:auto;"/>
+        <ion-list>
+                <ion-item  class="item-divider">Wordpress Shop</ion-item>
+            <ion-item ng-if="!userData" menu-close ui-sref="wpapp.login" >Login</ion-item>  
+            <ion-item  menu-close ui-sref="wpapp.home" >Home</ion-item>
+            <ion-item menu-close ui-sref="wpapp.products">Products</ion-item>
+            <ion-item menu-close ui-sref="wpapp.search">Search</ion-item>
+            <ion-item ng-if="!userData" menu-close ui-sref="wpapp.signup" >Signup</ion-item>       
+           
+        <ion-item class="item-divider">Account</ion-item>
+            <ion-item ng-if="userData" menu-close ui-sref="wpapp.home" ng-click="logout()">Logout</ion-item>
+            <ion-item ng-if="userData" menu-close ui-sref="wpapp.orders">Your Orders</ion-item>
+            <ion-item ng-if="userData" menu-close ui-sref="wpapp.update">Info Update</ion-item>
+            <ion-item menu-close class="item-divider">Categories</ion-item>
+            <!-- <ion-item menu-close ng-repeat="cat in parentCategories" ui-sref="wpapp.categoryprds({categoryID: cat.slug})" > {{cat.name}}</ion-item> -->
+        </ion-list>
+        <img src="img/rabaat.jpg" style="width:100%; height:auto;"/>
+    </ion-side-menu>
+</ion-side-menus>

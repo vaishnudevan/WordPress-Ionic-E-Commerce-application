@@ -1,0 +1,15 @@
+<ion-view>
+    <ion-nav-title>Products by Categories</ion-nav-title>
+    
+    <ion-content>
+        
+       <div class="list">
+            <ion-item class="item-avatar-left" ng-repeat="cat in categories"  ui-sref="wpapp.categoryprds({categoryID: cat.slug})">
+                <img ng-src="{{cat.image || 'https://placeimg.com/64/64/' + cat.name }}"/>
+                <h2>{{cat.name}}</h2>
+                <p>{{cat.description}}</p>
+            </ion-item>
+        </div>
+        
+    <ion-content>
+</ion-view>

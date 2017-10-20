@@ -1,0 +1,60 @@
+<ion-view view-title="Update">
+    <div class='bar bar-subheader bar-positive'>
+      <h1 class="title">Update</h1>
+    </div>
+    <ion-content class="has-subheader padding">
+    
+    <div class="list list-inset" class="list padding smart-form">
+      <div class="item item-divider">
+        Personal Information
+      </div>
+      
+      <label class="item item-input">
+        <span class="input-label">First Name</span>
+        <input type="text" ng-model="a.first_name" ng-value="a.first_name">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Lastn Name</span>
+        <input type="text" ng-model="a.last_name" ng-value="a.last_name">
+
+      </label>
+     
+      <div class="item item-divider">
+        Billing Address
+      </div>
+      <label class="item item-input">
+        <span class="input-label">Street</span>
+        <input type="text" ng-model="a.billing_address.address_1" ng-value="a.billing_address.address_1">
+      </label>
+    
+      <label class="item item-input">
+        <span class="input-label">Address 2</span>
+        <input type="text" ng-model="a.billing_address.address_2" ng-value="a.billing_address.address_2">
+      </label>
+     
+      <label class="item item-input ">
+        <span class="input-label">City</span>
+        <input type="text" ng-model="a.billing_address.city" ng-value="a.billing_address.city">
+          
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Pincode</span>
+        <input type="text" ng-model="a.billing_address.postcode" ng-value="a.billing_address.postcode">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Phone</span>
+        <input type="text" ng-model="a.billing_address.phone"  ng-value="a.billing_address.phone">
+      </label>
+      
+    
+      <div class="button-bar">
+        
+        <button class="button button-assertive button-block" ng-click="UpdateAddress(a)">Update Address</button>
+      </div>
+    </div>
+    
+    
+    
+    </ion-content>
+    </ion-view>
+    

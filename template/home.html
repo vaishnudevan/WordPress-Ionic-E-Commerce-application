@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-nav-title>Welcome to Woordpress Shop</ion-nav-title>
+    
+    <ion-content>
+        <ion-slide-box show-pager="true" does-continue="true" pager-click="true" auto-play="true" slide-interval="4000">
+            <ion-slide ng-repeat="count in [1,2,3]">
+                <img ng-src="img/slider/{{count}}.jpg" class="full-image"/>
+            </ion-slide>
+        </ion-slide-box>
+       <div class="list">
+            <ion-item class="item-dividier item-button-right">
+                Shop By Category
+                <button class="button button-small button-clear button-assertive" ui-sref="wpapp.categories">View All</button>
+            </ion-item>
+            <ion-item class="item-avatar-left" ng-repeat="cat in parentCategories" ui-sref="wpapp.categoryprds({categorySlug: cat.id})">
+                <img ng-src="{{cat.image || 'https://placeimg.com/64/64/' + cat.name }}"/>
+                <h2>{{cat.name}}</h2>
+                <p>{{cat.description}}</p>
+            </ion-item>
+        </div>
+        
+    <ion-content>
+</ion-view>
